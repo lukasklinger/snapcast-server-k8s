@@ -1,0 +1,10 @@
+apiVersion: v2
+name: snapcast-server
+description: A Helm chart for Kubernetes
+
+# A chart can be either an 'application' or a 'library' chart.
+#
+type: application
+
+version: 0.1.0
+appVersion: "v0.26.0"

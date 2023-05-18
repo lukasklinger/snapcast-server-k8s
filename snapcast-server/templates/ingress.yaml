@@ -1,0 +1,48 @@
+{{- if .Values.ingress.enable }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "snapcast-server.fullname" $ }}-web
+  labels:
+    {{- include "snapcast-server.labels" $ | nindent 4 }}
+spec:
+  type: ClusterIP
+  ports:
+    - port: {{ .Values.ingress.port }}
+      protocol: TCP
+      name: {{ include "snapcast-server.fullname" $ }}
+  selector:
+    {{- include "snapcast-server.selectorLabels" $ | nindent 4 }}
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ include "snapcast-server.fullname" . }}
+
+  annotations:
+    {{- with .Values.ingress.annotations }}
+    {{ toYaml . | nindent 4 }}
+    {{- end }}
+
+  labels:
+    {{- include "snapcast-server.labels" $ | nindent 4 }}
+
+spec:
+  rules:
+  - host: {{ .Values.ingress.host }}
+    http:
+      paths:
+      - backend:
+          service:
+            name: {{ include "snapcast-server.fullname" . }}-web
+            port:
+              number: {{ .Values.ingress.port }}
+
+        path: /
+        pathType: Prefix
+
+  tls:
+  {{- with .Values.ingress.tls }}
+  {{ toYaml . | nindent 2 }}
+  {{- end }}
+{{- end }}
