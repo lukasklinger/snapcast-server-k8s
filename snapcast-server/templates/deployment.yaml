@@ -39,7 +39,7 @@ spec:
               mountPath: "/etc/snapconfig"
               readOnly: true
           ports:
-          {{- range $svc := .Values.services }}
+          {{- range $svc := .Values.service.ports }}
             - name: {{ $svc.name }}
               containerPort: {{ $svc.port }}
               protocol: TCP
