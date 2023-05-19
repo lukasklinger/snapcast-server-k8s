@@ -47,14 +47,14 @@ ingress:
   enable: true
   port: 1780
   service: web
-  host: snapcast.apps.chaosdorf.space
+  host: snapcast.chaosdorf.space
 
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
 
   tls:
     - hosts:
-      - snapcast.apps.chaosdorf.space
+      - snapcast.chaosdorf.space
       secretName: ingress-tls
 
 resources:
