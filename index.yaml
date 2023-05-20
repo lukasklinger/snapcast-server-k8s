@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  snapcast-server:
+  - apiVersion: v2
+    appVersion: v0.26.0
+    created: "2023-05-20T16:48:21.801316015Z"
+    description: A Helm chart for Kubernetes
+    digest: bf90c5f2ae97a3140f0821eeb482799218bce1ee09095f53a82925e58dc1d999
+    name: snapcast-server
+    type: application
+    urls:
+    - https://github.com/lukasklinger/snapcast-server-k8s/releases/download/snapcast-server-0.1.0/snapcast-server-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-05-20T16:48:21.801322415Z"
