@@ -1,9 +1,9 @@
 image:
-  repository: saiyato/snapserver
+  repository: ghcr.io/lukasklinger/snapcast-server-k8s
   pullPolicy: IfNotPresent
 
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "main"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -94,7 +94,7 @@ config:
 
     # Default transport codec
     # (flac|ogg|opus|pcm)[:options]
-    codec: ogg
+    codec: flac
 
     # Default source stream read chunk size [ms].
     # The server will continously read this number of milliseconds from the source into buffer and pass this buffer to the encoder.
