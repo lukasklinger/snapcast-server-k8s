@@ -131,6 +131,7 @@ config:
       - tcp://0.0.0.0:4952?name=tcp-stream-4952&mode=server
       - tcp://0.0.0.0:4953?name=tcp-stream-4953&mode=server
       - tcp://0.0.0.0:4954?name=tcp-stream-4954&mode=server
+      - tcp://0.0.0.0:4850?name=mopidy&mode=server
 
   apis:
     http:
