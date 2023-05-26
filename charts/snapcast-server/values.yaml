@@ -56,6 +56,9 @@ service:
     - name: tcp-stream-4954
       port: 4954
 
+    - name: mopidy
+      port: 4850
+
 ingress:
   enable: true
   port: 1780
