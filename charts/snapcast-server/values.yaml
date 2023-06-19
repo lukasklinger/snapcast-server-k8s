@@ -59,6 +59,9 @@ service:
     - name: mopidy
       port: 4850
 
+    - name: chromecast
+      port: 4851
+
 ingress:
   enable: true
   port: 1780
@@ -135,6 +138,7 @@ config:
       - tcp://0.0.0.0:4953?name=tcp-stream-4953&mode=server
       - tcp://0.0.0.0:4954?name=tcp-stream-4954&mode=server
       - tcp://0.0.0.0:4850?name=mopidy&mode=server
+      - tcp://0.0.0.0:4851?name=chromecast&mode=server
 
   apis:
     http:
