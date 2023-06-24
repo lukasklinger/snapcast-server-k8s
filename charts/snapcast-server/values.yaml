@@ -61,6 +61,9 @@ service:
 
     - name: chromecast
       port: 4851
+    
+    - name: hackcenter-bt
+      port: 4852
 
 ingress:
   enable: true
@@ -139,6 +142,7 @@ config:
       - tcp://0.0.0.0:4954?name=tcp-stream-4954&mode=server
       - tcp://0.0.0.0:4850?name=mopidy&mode=server
       - tcp://0.0.0.0:4851?name=chromecast&mode=server
+      - tcp://0.0.0.0:4852?name=hackcenter-bt&mode=server
 
   apis:
     http:
